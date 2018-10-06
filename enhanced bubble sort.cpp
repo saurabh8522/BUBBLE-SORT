@@ -20,18 +20,19 @@ ll swap(ll *x, ll *y)
 ll sort(ll arr[])
 {
 
-	bool flag=1;
+	
 	for(ll i=0; i<n; i++)
 	{
+		bool flag=1;
 	
 		for(ll j=0; j<n-1-i; j++)
 			if(arr[j]>arr[j+1]) 
 			{
 				//debug(arr[j],arr[j+1],j);
 				swap(&arr[j+1],&arr[j]);
-				flag=0;
+					flag=0;			//flag here breaks loop is no comparision is done
 			}
-			if(flag==0) break;
+			if(flag==1) break;
 			
 	}
 	cout<<"sorted array is:";
