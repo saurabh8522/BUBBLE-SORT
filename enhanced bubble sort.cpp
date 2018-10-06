@@ -20,7 +20,7 @@ ll swap(ll *x, ll *y)
 ll sort(ll arr[])
 {
 
-	
+	bool flag=1;
 	for(ll i=0; i<n; i++)
 	{
 	
@@ -29,8 +29,9 @@ ll sort(ll arr[])
 			{
 				//debug(arr[j],arr[j+1],j);
 				swap(&arr[j+1],&arr[j]);
-				
+				flag=0;
 			}
+			if(flag==0) break;
 			
 	}
 	cout<<"sorted array is:";
