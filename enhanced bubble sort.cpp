@@ -21,18 +21,17 @@ ll sort(ll arr[])
 {
 
 	
-	bool flag=0;
 	for(ll i=0; i<n; i++)
 	{
-		flag=1;
+	
 		for(ll j=0; j<n-1-i; j++)
 			if(arr[j]>arr[j+1]) 
 			{
 				//debug(arr[j],arr[j+1],j);
 				swap(&arr[j+1],&arr[j]);
-				flag=0;
+				
 			}
-			if(flag==1) break;
+			
 	}
 	cout<<"sorted array is:";
 	f(i,0,n) cout<<arr[i]<<"	";
