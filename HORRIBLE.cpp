@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long int
+
+//building seg tree
 void build(ll *arr,ll *seg,ll *lazy,ll node,ll l,ll r){
 	if(l==r){
 		seg[node]=arr[l];
@@ -13,6 +15,7 @@ void build(ll *arr,ll *seg,ll *lazy,ll node,ll l,ll r){
 	seg[node]=seg[2*node]+seg[2*node+1];
 	lazy[node]=0;
 }
+// summming in range 
 ll sum(ll *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 	//cout<<node<<endl;
 	if(end<l||start>r){
@@ -32,6 +35,8 @@ ll sum(ll *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 	ll mid=(start+end)/2;
 	return sum(seg,lazy,2*node,start,mid,l,r)+sum(seg,lazy,2*node+1,mid+1,end,l,r);
 }
+
+//range update
 void update(ll *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r,ll val){
 	if(lazy[node]!=0){
 		seg[node]+=(end-start+1)*lazy[node];
