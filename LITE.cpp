@@ -84,6 +84,7 @@ struct bulb find(struct bulb *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 	ans.off=ans1.off+ans2.off;
 	return ans;
 }
+//main
 int main(){
 	ll n,q;
 	scanf("%lld%lld",&n,&q);
