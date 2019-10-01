@@ -105,6 +105,7 @@ struct mul find(struct mul *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 	ans.three=ans1.three+ans2.three;
 	return ans;
 }
+//main
 int main(){
 	ll n,q;
 	scanf("%lld%lld",&n,&q);
