@@ -62,6 +62,7 @@ void update(ll *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r,ll val){
 	update(seg,lazy,2*node+1,mid+1,end,l,r,val);
 	seg[node]=seg[2*node]+seg[2*node+1];
 }
+//main
 int main(){
 	ll t;
 	cin>>t;
