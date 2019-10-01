@@ -5,6 +5,7 @@ using namespace std;
 //building seg tree
 void build(ll *arr,ll *seg,ll *lazy,ll node,ll l,ll r){
 	if(l==r){
+//This code is to be edited for hacktoberfest
 		seg[node]=arr[l];
 		lazy[node]=0;
 		return;
