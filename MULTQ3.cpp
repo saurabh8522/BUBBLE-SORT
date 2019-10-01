@@ -4,6 +4,7 @@ using namespace std;
 struct mul{
 	ll one,two,three;
 };
+//building seg tree
 void build(struct mul *seg,ll *lazy,ll node,ll start,ll end){
 	if(start==end){
 		seg[node].one=0;
@@ -21,6 +22,7 @@ void build(struct mul *seg,ll *lazy,ll node,ll start,ll end){
 	lazy[node]=0;
 	return;
 }
+// range update
 void update(struct mul *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 	if(lazy[node]!=0){
 		if(lazy[node]%3==1){
@@ -64,6 +66,7 @@ void update(struct mul *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 	seg[node].three=seg[2*node].three+seg[2*node+1].three;
 	return;
 }
+// mul function
 struct mul find(struct mul *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 	struct mul ans;
 	if(l>end||r<start){

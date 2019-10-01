@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+//building tree
 void build(int *arr,int *seg,int node,int start,int end){
 	if(start==end)
 		seg[node]=arr[start];
@@ -11,6 +12,8 @@ void build(int *arr,int *seg,int node,int start,int end){
 	}
 	//return seg[i];
 }
+
+//  getting sum in range from l to r
 int sum(int *seg,int node,int start,int end,int l,int r){
 	if(r<start||l>end){
 		return 0;
@@ -23,6 +26,7 @@ int sum(int *seg,int node,int start,int end,int l,int r){
 		return sum(seg,2*node,start,mid,l,r)+sum(seg,2*node+1,mid+1,end,l,r);
 	}
 }
+//update range start to end with value val
 void update(int *seg,int node,int start,int end,int index,int val){
 	if(start==end){
 		seg[node]+=val;

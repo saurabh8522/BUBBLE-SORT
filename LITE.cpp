@@ -4,6 +4,7 @@ using namespace std;
 struct bulb{
 	ll on,off;
 };
+//building seg tree
 void build(struct bulb *seg,ll *lazy,ll node,ll start,ll end){
 	//cout<<node<<endl;
 	if(start==end){
@@ -19,6 +20,7 @@ void build(struct bulb *seg,ll *lazy,ll node,ll start,ll end){
 	seg[node].off=seg[2*node].off+seg[2*node+1].off;
 	lazy[node]=0;
 }
+// range update
 void update(struct bulb *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 	if(lazy[node]!=0){
 		if(lazy[node]&1){
@@ -51,6 +53,8 @@ void update(struct bulb *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 	seg[node].on=seg[2*node].on+seg[2*node+1].on;
 	seg[node].off=seg[2*node].off+seg[2*node+1].off;
 }
+
+//bulb function
 struct bulb find(struct bulb *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 	struct bulb ans;
 	if(r<start||l>end){
