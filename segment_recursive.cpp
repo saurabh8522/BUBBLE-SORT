@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define mod 1000000009
 //building tree
 void build(int *arr,int *seg,int node,int start,int end){
 	if(start==end)
