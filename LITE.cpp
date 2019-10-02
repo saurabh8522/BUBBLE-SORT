@@ -4,7 +4,8 @@ using namespace std;
 struct bulb{
 	ll on,off;
 };
-//building seg tree
+//building segmnet tree
+//below is the complete code
 void build(struct bulb *seg,ll *lazy,ll node,ll start,ll end){
 	//cout<<node<<endl;
 	if(start==end){
