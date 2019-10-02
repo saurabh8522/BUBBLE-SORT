@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define mod 1000000009
 #define ll long long int
 
 //building seg tree
