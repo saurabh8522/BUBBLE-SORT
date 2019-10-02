@@ -14,6 +14,7 @@ void build(int *arr,int *seg,int node,int start,int end){
 }
 
 //  getting sum in range from l to r
+//this is for fetch operation
 int sum(int *seg,int node,int start,int end,int l,int r){
 	if(r<start||l>end){
 		return 0;
