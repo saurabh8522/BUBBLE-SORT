@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define mod 100000009
 #define ll long long int
 struct bulb{
 	ll on,off;
