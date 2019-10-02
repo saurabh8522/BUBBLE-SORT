@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define ll long long
 #define ll long long int
 ll INF=1e15;
 struct node{
