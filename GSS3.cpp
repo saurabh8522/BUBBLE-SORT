@@ -80,6 +80,7 @@ int main(){
 	ll m;
 	scanf("%lld",&m);
 	while(m--){
+		//for m times
 		int type;
 		cin>>type;
 		if(type==1){
