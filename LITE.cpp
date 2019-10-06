@@ -49,9 +49,9 @@ void update(struct bulb *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 		}
 		return ;
 	}
-	ll mid=(start+end)/2;
-	update(seg,lazy,2*node,start,mid,l,r);
-	update(seg,lazy,2*node+1,mid+1,end,l,r);
+	ll m=(start+end)/2;
+	update(seg,lazy,2*node,start,m,l,r);
+	update(seg,lazy,2*node+1,m+1,end,l,r);
 	seg[node].on=seg[2*node].on+seg[2*node+1].on;
 	seg[node].off=seg[2*node].off+seg[2*node+1].off;
 }
