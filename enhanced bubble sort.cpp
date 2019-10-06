@@ -8,9 +8,9 @@
 
 void swap(int *xp, int *yp) 
 { 
-	int temp = *xp; 
+	int t = *xp; 
 	*xp = *yp; 
-	*yp = temp; 
+	*yp = t; 
 } 
 
 
@@ -33,10 +33,10 @@ void printArray(int arr[], int size)
 // Driver program to test above functions 
 int main() 
 { 
-	int arr[] = {64, 34, 25, 12, 22, 11, 90}; 
-	int n = sizeof(arr)/sizeof(arr[0]); 
-	bubbleSort(arr, n); 
+	int array[] = {64, 34, 25, 12, 22, 11, 90}; 
+	int n = sizeof(array)/sizeof(array[0]); 
+	bubbleSort(array, n); 
 	printf("Sorted array: \n"); 
-	printArray(arr, n); 
+	printArray(array, n); 
 	return 0; 
 } 
