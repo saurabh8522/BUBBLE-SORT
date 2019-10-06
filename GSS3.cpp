@@ -6,8 +6,8 @@ ll INF=1e15;
 struct node{
 	ll sum,psum,ssum,msum;
 };
-ll arr[50005];
-struct node seg[131072];
+ll arr[50009];
+struct node seg[131074];
 void build(ll node,ll l,ll r){
 	if(l==r){
 		seg[node].psum=arr[l];
@@ -70,8 +70,8 @@ int main(){
  //    cin.tie(NULL);
 	ll n;
 	scanf("%lld",&n);
-	for(int i=1;i<=n;i++){
-		scanf("%lld",&arr[i]);
+	for(int j=1;j<=n;j++){
+		scanf("%lld",&arr[j]);
 	}
 	// for(int i=1;i<=n;i++){
 	// 	cout<<arr[i]<<" ";
