@@ -17,7 +17,6 @@ void build(ll *arr,ll *seg,ll *lazy,ll node,ll l,ll r){
 	seg[node]=seg[2*node]+seg[2*node+1];
 	lazy[node]=0;
 }
-// summming in range 
 ll sum(ll *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 	//cout<<node<<endl;
 	if(end<l||start>r){
