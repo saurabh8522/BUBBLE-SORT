@@ -27,7 +27,7 @@ int sum(int *seg,int node,int start,int end,int l,int r){
 		return sum(seg,2*node,start,mid,l,r)+sum(seg,2*node+1,mid+1,end,l,r);
 	}
 }
-//update range start to end with value val
+//range change start to end with value val
 //this function is for update operation
 void update(int *seg,int node,int start,int end,int index,int val){
 	if(start==end){
