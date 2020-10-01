@@ -2,6 +2,7 @@
 using namespace std;
 #define mod 1000000009
 //building tree
+//only adding comment- by ankit
 void build(int *arr,int *seg,int node,int st,int ending){
 	if(st==ending)
 		seg[node]=arr[st];
