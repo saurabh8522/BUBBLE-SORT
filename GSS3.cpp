@@ -7,15 +7,15 @@ ll INF=1e15;
 struct node{
 	ll sum,psum,ssum,msum;
 };
-ll arr[50009];
-struct node seg[131074];
+ll arr[70005];
+struct node seg[141072];
 void build(ll node,ll l,ll r){
 	if(l==r){
 		seg[node].psum=arr[l];
 		seg[node].ssum=arr[l];
 		seg[node].msum=arr[l];
 		seg[node].sum=arr[l];
-		return ;
+		return;
 	}
 	ll mid=(l+r)>>1;
 	build(2*node,l,mid);
