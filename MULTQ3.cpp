@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define mod 1000000009
 #define ll long long int
 #define SIZE 10000
 struct mul{
@@ -59,9 +60,9 @@ void update(struct mul *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 		lazy[node]=0;
 		return ;
 	}
-	ll mid=(start+end)/2;
-	update(seg,lazy,2*node,start,mid,l,r);
-	update(seg,lazy,2*node+1,mid+1,end,l,r);
+	ll m=(start+end)/2;
+	update(seg,lazy,2*node,start,m,l,r);
+	update(seg,lazy,2*node+1,m,end,l,r);
 	seg[node].one=seg[2*node].one+seg[2*node+1].one;
 	seg[node].two=seg[2*node].two+seg[2*node+1].two;
 	seg[node].three=seg[2*node].three+seg[2*node+1].three;
