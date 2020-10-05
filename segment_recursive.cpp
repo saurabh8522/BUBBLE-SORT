@@ -45,6 +45,7 @@ void update(int *seg,int node,int start,int end,int index,int val){
 		seg[node]=seg[2*node]+seg[2*node+1];
 	}
 }
+//main
 int main(){
 	int n;
 	cin>>n;

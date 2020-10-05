@@ -2,6 +2,7 @@
 using namespace std;
 #define ll long long
 #define ll long long int
+#define SIZE 10000
 ll INF=1e15;
 struct node{
 	ll sum,psum,ssum,msum;
@@ -66,8 +67,8 @@ void update(ll node,ll start,ll end,ll index,ll val){
 	seg[node].msum=max(seg[2*node].msum,max(seg[2*node+1].msum,seg[2*node].ssum+seg[2*node+1].psum));
 }
 int main(){
-	// ios_base::sync_with_stdio(false);
- //    cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 	ll n;
 	scanf("%lld",&n);
 	for(int j=1;j<=n;j++){
