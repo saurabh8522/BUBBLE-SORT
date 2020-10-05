@@ -2,7 +2,7 @@
 using namespace std;
 #define ll long long int
 
-//building seg tree
+//building seg tree using recursion
 void build(ll *arr,ll *seg,ll *lazy,ll node,ll l,ll r){
 	if(l==r){
 		seg[node]=arr[l];
