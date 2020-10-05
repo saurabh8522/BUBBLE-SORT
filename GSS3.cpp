@@ -2,12 +2,13 @@
 using namespace std;
 #define ll long long
 #define ll long long int
+#define SIZE 10000
 ll INF=1e15;
 struct node{
 	ll sum,psum,ssum,msum;
 };
-ll arr[50005];
-struct node seg[131072];
+ll arr[50009];
+struct node seg[131074];
 void build(ll node,ll l,ll r){
 	if(l==r){
 		seg[node].psum=arr[l];
@@ -66,12 +67,12 @@ void update(ll node,ll start,ll end,ll index,ll val){
 	seg[node].msum=max(seg[2*node].msum,max(seg[2*node+1].msum,seg[2*node].ssum+seg[2*node+1].psum));
 }
 int main(){
-	// ios_base::sync_with_stdio(false);
- //    cin.tie(NULL);
+	ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 	ll n;
 	scanf("%lld",&n);
-	for(int i=1;i<=n;i++){
-		scanf("%lld",&arr[i]);
+	for(int j=1;j<=n;j++){
+		scanf("%lld",&arr[j]);
 	}
 	// for(int i=1;i<=n;i++){
 	// 	cout<<arr[i]<<" ";

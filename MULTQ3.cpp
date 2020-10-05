@@ -2,6 +2,7 @@
 using namespace std;
 #define mod 1000000009
 #define ll long long int
+#define SIZE 10000
 struct mul{
 	ll one,two,three;
 };
@@ -59,9 +60,9 @@ void update(struct mul *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 		lazy[node]=0;
 		return ;
 	}
-	ll mid=(start+end)/2;
-	update(seg,lazy,2*node,start,mid,l,r);
-	update(seg,lazy,2*node+1,mid+1,end,l,r);
+	ll m=(start+end)/2;
+	update(seg,lazy,2*node,start,m,l,r);
+	update(seg,lazy,2*node+1,m,end,l,r);
 	seg[node].one=seg[2*node].one+seg[2*node+1].one;
 	seg[node].two=seg[2*node].two+seg[2*node+1].two;
 	seg[node].three=seg[2*node].three+seg[2*node+1].three;
@@ -113,11 +114,11 @@ int main(){
 	struct mul seg[4*n];
 	ll lazy[4*n];
 	build(seg,lazy,1,1,n);
-	//cout<<0<<endl;
-	// for(ll i=1;i<=2*n-1;i++){
-	// 		cout<<seg[i].one<<" "<<seg[i].two<<" "<<" "<<seg[i].three<<" "<<lazy[i]<<endl;
-	// 	}
-	// 	cout<<endl;
+	cout<<0<<endl;
+	for(ll i=1;i<=2*n-1;i++){
+			cout<<seg[i].one<<" "<<seg[i].two<<" "<<" "<<seg[i].three<<" "<<lazy[i]<<endl;
+		}
+		cout<<endl;
 	while(q--){
 		ll type;
 		scanf("%lld",&type);
@@ -127,9 +128,9 @@ int main(){
 		r++;
 		if(type==0){
 			update(seg,lazy,1,1,n,l,r);
-			// for(ll i=1;i<=2*n-1;i++){
-			// 	cout<<seg[i].one<<" "<<seg[i].two<<" "<<" "<<seg[i].three<<" "<<lazy[i]<<endl;
-			// }
+			for(ll i=1;i<=2*n-1;i++){
+				cout<<seg[i].one<<" "<<seg[i].two<<" "<<" "<<seg[i].three<<" "<<lazy[i]<<endl;
+			}
 		}
 		else{
 			printf("%lld\n",find(seg,lazy,1,1,n,l,r).three);
