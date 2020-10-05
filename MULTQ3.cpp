@@ -2,6 +2,7 @@
 using namespace std;
 #define mod 1000000009
 #define ll long long int
+#define SIZE 10000
 struct mul{
 	ll one,two,three;
 };
@@ -113,11 +114,11 @@ int main(){
 	struct mul seg[4*n];
 	ll lazy[4*n];
 	build(seg,lazy,1,1,n);
-	//cout<<0<<endl;
-	// for(ll i=1;i<=2*n-1;i++){
-	// 		cout<<seg[i].one<<" "<<seg[i].two<<" "<<" "<<seg[i].three<<" "<<lazy[i]<<endl;
-	// 	}
-	// 	cout<<endl;
+	cout<<0<<endl;
+	for(ll i=1;i<=2*n-1;i++){
+			cout<<seg[i].one<<" "<<seg[i].two<<" "<<" "<<seg[i].three<<" "<<lazy[i]<<endl;
+		}
+		cout<<endl;
 	while(q--){
 		ll type;
 		scanf("%lld",&type);
@@ -127,9 +128,9 @@ int main(){
 		r++;
 		if(type==0){
 			update(seg,lazy,1,1,n,l,r);
-			// for(ll i=1;i<=2*n-1;i++){
-			// 	cout<<seg[i].one<<" "<<seg[i].two<<" "<<" "<<seg[i].three<<" "<<lazy[i]<<endl;
-			// }
+			for(ll i=1;i<=2*n-1;i++){
+				cout<<seg[i].one<<" "<<seg[i].two<<" "<<" "<<seg[i].three<<" "<<lazy[i]<<endl;
+			}
 		}
 		else{
 			printf("%lld\n",find(seg,lazy,1,1,n,l,r).three);
