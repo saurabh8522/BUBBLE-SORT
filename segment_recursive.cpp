@@ -42,6 +42,7 @@ void update(int *seg,int node,int start,int end,int index,int val){
 		seg[node]=seg[2*node]+seg[2*node+1];
 	}
 }
+//main
 int main(){
 	int n;
 	cin>>n;
@@ -50,10 +51,10 @@ int main(){
 		cin>>arr[i];
 	}
 	build(arr,seg,1,1,n);
-	// for(int i=1;i<=2*n-1;i++){
-	// 	cout<<seg[i]<<" ";
-	// }
-	// cout<<endl;
+	for(int i=1;i<=2*n-1;i++){
+		cout<<seg[i]<<" ";
+	}
+	cout<<endl;
 	int q;
 	cin>>q;
 	for(int i=0;i<q;i++){
