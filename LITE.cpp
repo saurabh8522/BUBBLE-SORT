@@ -1,49 +1,46 @@
-// C++ program for implementation of selection sort 
+// C++ program for insertion sort 
 #include <bits/stdc++.h> 
 using namespace std; 
 
-void swap(int *xp, int *yp) 
+/* Function to sort an array using insertion sort*/
+void insertionSort(int arr[], int n) 
 { 
-	int temp = *xp; 
-	*xp = *yp; 
-	*yp = temp; 
-} 
-
-void selectionSort(int arr[], int n) 
-{ 
-	int i, j, min_idx; 
-
-	// One by one move boundary of unsorted subarray 
-	for (i = 0; i < n-1; i++) 
+	int i, key, j; 
+	for (i = 1; i < n; i++) 
 	{ 
-		// Find the minimum element in unsorted array 
-		min_idx = i; 
-		for (j = i+1; j < n; j++) 
-		if (arr[j] < arr[min_idx]) 
-			min_idx = j; 
+		key = arr[i]; 
+		j = i - 1; 
 
-		// Swap the found minimum element with the first element 
-		swap(&arr[min_idx], &arr[i]); 
+		/* Move elements of arr[0..i-1], that are 
+		greater than key, to one position ahead 
+		of their current position */
+		while (j >= 0 && arr[j] > key) 
+		{ 
+			arr[j + 1] = arr[j]; 
+			j = j - 1; 
+		} 
+		arr[j + 1] = key; 
 	} 
 } 
 
-/* Function to print an array */
-void printArray(int arr[], int size) 
+// A utility function to print an array of size n 
+void printArray(int arr[], int n) 
 { 
 	int i; 
-	for (i=0; i < size; i++) 
+	for (i = 0; i < n; i++) 
 		cout << arr[i] << " "; 
 	cout << endl; 
 } 
 
-// Driver program to test above functions 
+/* Driver code */
 int main() 
 { 
-	int arr[] = {64, 25, 12, 22, 11}; 
-	int n = sizeof(arr)/sizeof(arr[0]); 
-	selectionSort(arr, n); 
-	cout << "Sorted array: \n"; 
+	int arr[] = { 12, 11, 13, 5, 6 }; 
+	int n = sizeof(arr) / sizeof(arr[0]); 
+
+	insertionSort(arr, n); 
 	printArray(arr, n); 
+
 	return 0; 
 } 
 
