@@ -1,13 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define mod 1000000009
 //building tree
-void build(int *arr,int *seg,int node,int start,int end){
-	if(start==end)
-		seg[node]=arr[start];
+//only adding comment- by ankit
+void build(int *arr,int *seg,int node,int st,int ending){
+	if(st==ending)
+		seg[node]=arr[st];
 	else{
-		int mid=(start+end)/2;
-		build(arr,seg,2*node,start,mid);
-		build(arr,seg,2*node+1,mid+1,end);
+		int mid=(st+ending)/2;
+		build(arr,seg,2*node,st,mid);
+		build(arr,seg,2*node+1,mid+1,ending);
 		seg[node]=seg[2*node]+seg[2*node+1];
 	}
 	//return seg[i];
@@ -26,7 +28,8 @@ int sum(int *seg,int node,int start,int end,int l,int r){
 		return sum(seg,2*node,start,mid,l,r)+sum(seg,2*node+1,mid+1,end,l,r);
 	}
 }
-//update range start to end with value val
+//range change start to end with value val
+//this function is for update operation
 void update(int *seg,int node,int start,int end,int index,int val){
 	if(start==end){
 		seg[node]+=val;

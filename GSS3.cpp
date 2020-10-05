@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define ll long long
 #define ll long long int
 #define SIZE 10000
 ll INF=1e15;
@@ -70,8 +71,8 @@ int main(){
     cin.tie(NULL);
 	ll n;
 	scanf("%lld",&n);
-	for(int i=1;i<=n;i++){
-		scanf("%lld",&arr[i]);
+	for(int j=1;j<=n;j++){
+		scanf("%lld",&arr[j]);
 	}
 	// for(int i=1;i<=n;i++){
 	// 	cout<<arr[i]<<" ";
@@ -81,6 +82,7 @@ int main(){
 	ll m;
 	scanf("%lld",&m);
 	while(m--){
+		//for m times
 		int type;
 		cin>>type;
 		if(type==1){
