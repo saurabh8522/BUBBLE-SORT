@@ -12,10 +12,6 @@ void swap(int *xp, int *yp)
 	*xp = *yp; 
 	*yp = t; 
 } 
-
-
-
-	// IF no two elements were swapped by inner loop, then break 
 	if (swapped == false) 
 		break; 
 } 
