@@ -2,7 +2,7 @@
 using namespace std;
 #define mod 1000000009
 #define ll long long int
-
+//This code helps in Competitive Coding
 //building seg tree using recursion
 void build(ll *arr,ll *seg,ll *lazy,ll node,ll l,ll r){
 	if(l==r){
@@ -38,7 +38,7 @@ ll sum(ll *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r){
 }
 
 //range update
-void update(ll *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r,ll val){
+void updatefunc(ll *seg,ll *lazy,ll node,ll start,ll end,ll l,ll r,ll val){
 	if(lazy[node]!=0){
 		seg[node]+=(end-start+1)*lazy[node];
 		if(start!=end){
@@ -95,7 +95,7 @@ int main(){
 				cin>>l>>r>>val;
 				//l++;
 				//r++;
-				update(seg,lazy,1,1,n,l,r,val);
+				updatefunc(seg,lazy,1,1,n,l,r,val);
 				// for(ll i=1;i<=2*n-1;i++){
 				// 	cout<<seg[i]<<" ";
 				// }
