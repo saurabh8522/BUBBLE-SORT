@@ -25,6 +25,13 @@ void dfs(int u){
 	dp[u][0]=sum0;
 	dp[u][1]=sum1;
 }
+//Function to return updated final value
+int update(int x,int y)
+{
+	cout<<"Here is the updated values\n";
+	int z=x*18+y/45;
+	return z;
+}
 int main(){
 	#ifndef ONLINE_JUDGE
 	freopen("input.txt", "r", stdin);
