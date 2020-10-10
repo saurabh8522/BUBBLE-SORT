@@ -3,13 +3,14 @@ using namespace std;
 #define mod 1000000009
 //building tree
 //only adding comment- by ankit
-void build(int *arr,int *seg,int node,int st,int ending){
+//Code Pull for Hacktober Fest
+void buildfunc(int *arr,int *seg,int node,int st,int ending){
 	if(st==ending)
 		seg[node]=arr[st];
 	else{
 		int mid=(st+ending)/2;
-		build(arr,seg,2*node,st,mid);
-		build(arr,seg,2*node+1,mid+1,ending);
+		buildfunc(arr,seg,2*node,st,mid);
+		buildfunc(arr,seg,2*node+1,mid+1,ending);
 		seg[node]=seg[2*node]+seg[2*node+1];
 	}
 	//return seg[i];
@@ -53,7 +54,7 @@ int main(){
 	for(int i=1;i<=n;i++){
 		cin>>arr[i];
 	}
-	build(arr,seg,1,1,n);
+	buildfunc(arr,seg,1,1,n);
 	for(int i=1;i<=2*n-1;i++){
 		cout<<seg[i]<<" ";
 	}
