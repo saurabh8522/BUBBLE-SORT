@@ -15,7 +15,8 @@ class Node
 // A utility function to get maximum 
 // of two integers 
 int max(int a, int b); 
-
+//A function to find saturated node
+int saturatefunc(int x,int y,int z);
 // A utility function to get the 
 // height of the tree 
 int height(Node *N) 
@@ -72,7 +73,7 @@ Node *rightRotate(Node *y)
 // rotate subtree rooted with x 
 // See the diagram given above. 
 Node *leftRotate(Node *x) 
-{ 
+{       //Node recurssion and switching
 	Node *y = x->right; 
 	Node *T2 = y->left; 
 
