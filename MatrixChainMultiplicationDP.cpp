@@ -37,11 +37,16 @@ int MatrixChainOrder(int p[], int i, int j)
 	
 	return min;
 }
+//main function
 int main()
-{
-	int arr[]; //input array
+{       vector<int> arr;
 	int n; //size of array
-
+        cin>>n;
+   for(int i=0;i<n;i++)
+   {int t;
+    cin>>t;
+    arr.push_back(t);
+   }
 	cout << "Minimum number of multiplications is "
 		<< MatrixChainOrder(arr, n);
 	getchar();
@@ -83,17 +88,21 @@ int MatrixChainOrder(int p[], int i, int j)
 	return min;
 }
 
+//main function
 int main()
-{
-	int arr[]; //input array
+{       vector<int> arr;
 	int n; //size of array
-
+        cin>>n;
+   for(int i=0;i<n;i++)
+   {int t;
+    cin>>t;
+    arr.push_back(t);
+   }
 	cout << "Minimum number of multiplications is "
 		<< MatrixChainOrder(arr, n);
 	getchar();
 	return 0;
 }
-
 
 
 
@@ -166,10 +175,10 @@ int MatrixChainOrder(int p[], int n)
 
 	int i, j, k, L, q;
 
-
+   
 	for (i = 1; i < n; i++)
 		m[i][i] = 0;
-
+        //2 for loop to check all the possible cases 
 	for (L = 2; L < n; L++) 
 	{
 		for (i = 1; i < n - L + 1; i++) 
@@ -179,8 +188,7 @@ int MatrixChainOrder(int p[], int n)
 			for (k = i; k <= j - 1; k++) 
 			{
 
-				q = m[i][k] + m[k + 1][j]
-					+ p[i - 1] * p[k] * p[j];
+				q = m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j];
 				if (q < m[i][j])
 					m[i][j] = q;
 			}
@@ -189,12 +197,16 @@ int MatrixChainOrder(int p[], int n)
 
 	return m[1][n - 1];
 }
-
+//main function
 int main()
-{
-	int arr[]; //input array
+{       vector<int> arr;
 	int n; //size of array
-
+        cin>>n;
+   for(int i=0;i<n;i++)
+   {int t;
+    cin>>t;
+    arr.push_back(t);
+   }
 	cout << "Minimum number of multiplications is "
 		<< MatrixChainOrder(arr, n);
 	getchar();
