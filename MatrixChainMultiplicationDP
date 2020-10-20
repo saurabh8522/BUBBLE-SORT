@@ -1,0 +1,202 @@
+////////////////Matrix Multiplication Problem//////////////////
+//////Problem statement-Given a sequence of matrices, find the most efficient way to multiply these matrices together. 
+The problem is not actually to perform the multiplications, but merely to decide in which order to perform the multiplications.
+Given an array p[] which represents the chain of matrices such that the ith matrix Ai is of dimension p[i-1] x p[i]. 
+We need to write a function MatrixChainOrder() that should return the minimum number of multiplications needed to multiply the chain. 
+//////////////////////////////////////////////////
+
+/*Below mentioned 3 different ways to solve this problem written in c++
+1. Naive method
+2. using Reccursion
+3.Dynamic Programming Solution using memorization 
+4. Dynamic Programming Solution using tabular method*/
+
+//1. A naive implementation
+
+#include <bits/stdc++.h>
+using namespace std;
+int MatrixChainOrder(int p[], int i, int j)
+{
+	if (i == j)
+		return 0;
+	int k;
+	int min = INT_MAX;
+	int count;
+
+	for (k = i; k < j; k++) 
+	{
+		count = MatrixChainOrder(p, i, k)
+				+ MatrixChainOrder(p, k + 1, j)
+				+ p[i - 1] * p[k] * p[j];
+
+		if (count < min)
+			min = count;
+	}
+
+	// Return minimum count
+	return min;
+}
+
+int main()
+{
+	int arr[]; //input array
+	int n//size of array;
+
+	int ans= MatrixChainOrder(arr, n);
+  cout<<"Minimum no of multiplication required"<<ans;
+	getchar();
+	return 0;
+}
+
+//2. C++ program recursive implementation
+
+#include <climits>
+#include <iostream>
+using namespace std;
+
+// function
+int MatrixChainOrder(int* p, int n)
+{
+	n++;
+	int m[n][n];
+	int i, j, k, L, q;
+
+	// initialize dp array with zero
+	for (i = 0; i < n; i++)
+		m[i][i] = 0;
+
+	// from L = 3 to L = n-1
+	for (L = 2; L < n; L++) 
+	{
+		for (i = 1; i < n - L + 1; i++) 
+		{
+			j = i + L - 1;
+		
+			// make m[i][j] = INT_MAX
+			m[i][j] = INT_MAX;
+			for (k = i; k <= j - 1; k++) 
+			{
+				q = m[i][k] + m[k + 1][j]
+					+ p[i - 1] * p[k] * p[j];
+			
+				// if q is less than m[i][j]
+				// make m[i][j] = q;
+				if (q < m[i][j]) {
+					m[i][j] = q;
+				}
+			}
+		}
+	}
+
+	// return ans as m[1][n-1]
+	return m[1][n - 1];
+}
+
+
+int main()
+{
+	int arr[]; //input array
+	int n//size of array;
+
+	int ans= MatrixChainOrder(arr, n);
+  cout<<"Minimum no of multiplication required"<<ans;
+	getchar();
+	return 0;
+}
+
+
+//3. C++ program using Dymanic Programming- memoization
+#include <climits>
+#include <iostream>
+using namespace std;
+
+// function
+int MatrixChainOrder(int* p, int n)
+{
+	n++;
+	int m[n][n];
+	int i, j, k, L, q;
+
+
+	for (i = 0; i < n; i++)
+		m[i][i] = 0;
+
+	for (L = 2; L < n; L++) 
+	{
+		for (i = 1; i < n - L + 1; i++) 
+		{
+			j = i + L - 1;
+		
+			// make m[i][j] = INT_MAX
+			m[i][j] = INT_MAX;
+			for (k = i; k <= j - 1; k++) 
+			{
+				q = m[i][k] + m[k + 1][j]
+					+ p[i - 1] * p[k] * p[j];
+
+				if (q < m[i][j]) {
+					m[i][j] = q;
+				}
+			}
+		}
+	}
+
+	// return ans as m[1][n-1]
+	return m[1][n - 1];
+}
+
+
+int main()
+{
+	int arr[]; //input array
+	int n//size of array;
+
+	int ans= MatrixChainOrder(arr, n);
+  cout<<"Minimum no of multiplication required"<<ans;
+	getchar();
+	return 0;
+}
+
+
+//4. C++ program using Dymanic Programming- tabular
+#include <bits/stdc++.h>
+using namespace std;
+
+int MatrixChainOrder(int p[], int n)
+{
+int i, j k;
+	for (i = 1; i < n; i++)
+		m[i][i] = 0;
+	for (L = 2; L < n; L++) 
+	{
+		for (i = 1; i < n - L + 1; i++) 
+		{
+			j = i + L - 1;
+			m[i][j] = INT_MAX;
+			for (k = i; k <= j - 1; k++) 
+			{
+
+				q = m[i][k] + m[k + 1][j]
+					+ p[i - 1] * p[k] * p[j];
+				if (q < m[i][j])
+					m[i][j] = q;
+			}
+		}
+	}
+
+	return m[1][n - 1];
+}
+
+int main()
+{
+	int arr[]; //input array
+	int n//size of array;
+
+	int ans= MatrixChainOrder(arr, n);
+  cout<<"Minimum no of multiplication required"<<ans;
+	getchar();
+	return 0;
+}
+
+
+// This code is contributed by Sharmila Biswas
